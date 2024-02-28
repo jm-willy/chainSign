@@ -1,7 +1,7 @@
 # chainSign
 ### Blockchain based cryptographic signature scheme
 
-Hash based cryptography is expected to remain quantum and classical computing resistant. Here, the irreversible/trapdoor/one-way function, pre-image and collision properties of hashes are used to generate an unlimited on-demand blockchain of verfiable chained one time use digital signatures. 
+Hash based cryptography is expected to remain quantum and classical computing resistant. Here, the irreversible/trapdoor/one-way function, pre-image and collision properties of hashes are used to generate an unlimited on-demand blockchain of verfiably chained one time use digital signatures. 
 
 Public keys are final hashes and private keys are "passwords" demonstrating a connection to final hash or public key, signing is revealing the posesion of a private value, that when hashed accordingly, outputs the public value, thus this scheme fully relies on pre-image and collision resistance. 
 
