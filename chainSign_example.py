@@ -12,15 +12,6 @@ def hash_protocol(input):
    input = hashlib.shake_256(input.encode()).hexdigest(int(128/8))
    return input
 
-def first_keys():
-   G = str(random.randint(0, 10e7))
-   A = hash_protocol(G)
-   R = str(random.randint(0, 10e7))
-   B = hash_protocol(A + R)
-   privKey = G, A, R
-   pubKey = B
-   return privKey, pubKey
-
 def next_keys(past_generator):
    G = str(random.randint(0, 10e6))
    A = hash_protocol(G)
@@ -37,7 +28,8 @@ def signature_verification(signature, pubKey):
 
 print()
 print('---> chainSign example:')
-loop_privKey, loop_pubKey = first_keys()
+R = str(random.randint(0, 10e7)) # chaining initializer
+loop_privKey, loop_pubKey = next_keys(R)
 chain_blocks = []
 for i in range(0, 11):
    print()
