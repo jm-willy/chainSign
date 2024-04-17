@@ -9,5 +9,7 @@ Is it important to remark a decisive disadvantage, to relate past and current si
 
 Equally important, this disadvantage does not exist for the usage of chainSign in blockchains. First note that chainSign is based on its own blockchain and does not need to be hosted on an independent blockchain, however its growing storage problem disappears when used to sign within blockchains. Due to the nature of decentralized ledgers, every digital signature must be always stored regardless and thus there’s no difference between chainSign or any other signature scheme. Hence for blockchains, there’s no storage penalty, just a computation penalty in order to verify the blockchain of keys. Regarding computation, verification of chainSign signatures be parallelized, to check A → B → C → D can be done in parallel with A → B, B → C and C → D.
 
+Another major disadvantage, any signature has two phases, one per block, with a present signature confirmed only in the future, after it has been chained on the next block. This happens because once the second private key has been revealed, anyone can use it to sign any transaction, until the next signature, when the generator key for that second key is revealed.
+
 ### Note
 chainSign can also be used through transaction chaining, by automatically sending funds from a one time expendable address to a new one, a self-transaction, each time at least one nomral transaction is done.
